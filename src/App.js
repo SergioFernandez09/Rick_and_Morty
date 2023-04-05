@@ -3,6 +3,10 @@ import Cards from './components/Cards.jsx';
 import Nav from './components/Nav';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Routes, Route} from 'react-router-dom'
+import About from './components/About';
+import Detail from './components/Detail';
+import Error from './components/Error';
 
 const example = {
    id: 1,
@@ -35,13 +39,20 @@ const onClose = (id) => {
       setCharacters (charactersFiltered)
 }
 
-   return (
+return (
+   
       <div className='App'>
          <Nav onSearch={onSearch}/>
-         <Cards characters={characters} onClose={onClose}/>
-         
+         <Routes>
+            <Route path="/" element={<Cards characters={characters} onClose={onClose}/>} />
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/detail/:id" element={<Detail />} />
+            <Route path="*" element={<Error />} />
+         </Routes>
       </div>
-   );
+   
+);
 }
 
 export default App;
