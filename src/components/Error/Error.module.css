@@ -1,0 +1,32 @@
+.Error {
+    
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/92fd94ce-597b-471f-bb2f-3f6de15b60e4/db72d4x-3d279db0-5e34-430a-a76e-b58b095617d5.png/v1/fill/w_1024,h_906/rick_and_morty_png_by_lalingla_db72d4x-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTA2IiwicGF0aCI6IlwvZlwvOTJmZDk0Y2UtNTk3Yi00NzFmLWJiMmYtM2Y2ZGUxNWI2MGU0XC9kYjcyZDR4LTNkMjc5ZGIwLTVlMzQtNDMwYS1hNzZlLWI1OGIwOTU2MTdkNS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GtHOsdm2EVwgeP-866LIoq1P2e8gDb5taaKBjtUcazA');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+
+  }
+  
+
+  .titulo{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  
+  .parrafo {
+    display: block;
+    color: #000000;
+    text-shadow: 2px 3px 4px rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 25rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  
+  }
+
+  

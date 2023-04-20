@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Cards from "./Cards";
 
 export default function SearchBar({onSearch}) {
    const [id, setId] = useState('');
