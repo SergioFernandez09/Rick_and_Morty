@@ -44,7 +44,7 @@ console.log(Detail)
              <h2>Name: {character.name}</h2>
             <h2>Species: {character.species}</h2>
             <h2>Gender: {character.gender}</h2>
-            {/* <h2>{character.origin}</h2> */}
+            {/* <h2>{character.origin</h2> */}
             <img src={character.image} alt={character.name} /> */
       
       </div>

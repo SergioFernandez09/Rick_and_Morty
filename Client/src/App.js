@@ -13,8 +13,9 @@ import Favorites from './components/Favorites/Favorites';
 
 // const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
 // const API_KEY = '316a61828bed.209f3a18b9b4930df3d3'
-const EMAIL = 'sergiofernandezn2001@gmail.com';
-const PASSWORD = 'Checho0525';
+// const EMAIL = 'sergiofernandezn2001@gmail.com';
+// const PASSWORD = 'Checho0525';
+const URL = 'http://localhost:3001/rickandmorty/login/';
 
 function App() {
    const [characters, setCharacters] = useState([])
@@ -22,11 +23,17 @@ function App() {
    const [access, setAccess] = useState(false);
    const navigate = useNavigate();
  
-   function login(userData) {
-     if (userData.password === PASSWORD && userData.email === EMAIL) {
-       setAccess(true);
-       navigate('/home');
-     }
+   const login = async (userData) => {
+      try {
+         const { email, password } = userData;
+         const { data } = await axios(URL + `?email=${email}&password=${password}`)
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
+         
+      } catch (error) {
+         console.log(error.message); 
+      }
    }
 
    useEffect(() => {
@@ -34,16 +41,18 @@ function App() {
    }, [access]);
 
 
-function onSearch(id) {
-   axios(`http://localhost:3001/rickandmorty/character/${id}`)
-        .then(response => response.data)
-        .then(( data ) => {
-           if (data.name) {
-              setCharacters((oldChars) => [...oldChars, data]);
-           } else {
-              window.alert('¡No hay personajes con ese ID!');
-           }
-        });
+const onSearch = async (id) => {
+   try {
+      const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      
+              if (data.name) {
+                 setCharacters((oldChars) => [...oldChars, data]);
+              } 
+         
+      } catch (error) {
+      alert('¡No hay personajes con ese ID!');
+      
+   }
 }
 const onClose = (id) => {
    const charactersFiltered = characters.filter(character => 
